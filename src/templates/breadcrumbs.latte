@@ -1,6 +1,6 @@
 {varType \Netlte\BreadCrumbs\Bread $control}
-<ol class="breadcrumb" n:if="count($control->getBreadCrumbs()) > 1" n:inner-foreach="$control->getBreadCrumbs() as $node">
-	<li n:class="$iterator->isLast() ? active">
+<ol class="breadcrumb float-sm-right" n:if="count($control->getBreadCrumbs()) > 1" n:inner-foreach="$control->getBreadCrumbs() as $node">
+	<li n:class="'breadcrumb-item', $iterator->isLast() ? active">
 		<a n:tag-if="!$iterator->isLast()" href="{$presenter->link($node->getLink(), $node->getArgs())}">
 			<i n:tag-if="$iterator->isFirst() && $control->getIcon()" class="{$control->getFQNIcon()}"></i>
 			{$node->getTitle()|translate}
